@@ -1,6 +1,9 @@
 #version 330 core
 out vec4 Color;
-in vec4 color_vertice;
+in vec2 Textura;
+in  vec4 color_vertice;
+uniform sampler2D ourTexture;
 void main(){
-	Color = color_vertice;
+
+	Color = texture(ourTexture, Textura);
 }
