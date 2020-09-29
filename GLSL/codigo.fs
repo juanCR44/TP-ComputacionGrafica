@@ -1,9 +1,21 @@
+//#version 330 core
+//out vec4 Color;
+//in  vec4 color_vertice;
+//void main(){
+//	Color = color_vertice;
+//}
+
 #version 330 core
 out vec4 Color;
-in vec2 Textura;
-in  vec4 color_vertice;
-uniform sampler2D ourTexture;
+uniform  vec4 color_vertice;
 void main(){
-
-	Color = texture(ourTexture, Textura);
+	//Color = vec4(1.0, 1.0, 0.0, 0.0);
+	Color = color_vertice;
 }
+
+//#version 330 core
+//out vec4 Color;
+////in  vec4 color_vertice;
+//void main(){
+//	Color = vec4(0.0, 1.0, 0.0, 0.0);
+//}
