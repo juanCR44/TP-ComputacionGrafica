@@ -144,7 +144,7 @@ int main() {
 
 	LibPc1 prueba;
 
-	prueba.leerOFF("cuadrado2.off");
+	prueba.leerOFF("OFF/cuadrado2.off");
 
 	prueba.setGeometry();
 	prueba.generateTexture("container.jpg");
@@ -157,8 +157,10 @@ int main() {
 		programa_shaders.usar();
 
 		glm::mat4 transformacion = glm::mat4(1.0f);
-		prueba.translateCenter(transformacion);
-
+		//prueba.translateCenter(transformacion);
+		prueba.translateTo(transformacion, glm::sin((float)glfwGetTime()) - 0.1, 0.0, 0.0);
+		prueba.scale(transformacion, glm::sin((float)glfwGetTime()) / 2.0, glm::sin((float)glfwGetTime()) / 2.0, 1.0);
+		prueba.rotate(transformacion, 1, 0.0, 0.0, 1.0);
 		programa_shaders.setMat4("transformacion", transformacion);
 
 
