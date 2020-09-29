@@ -255,6 +255,8 @@ public:
 
 
 	void liberarMemoria() {
+		delete[] vertices;
+		delete[] faces;
 		glDeleteVertexArrays(1, &id_array_vertices);
 		glDeleteBuffers(1, &id_array_buffers);
 	}
