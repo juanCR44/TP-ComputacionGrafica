@@ -62,12 +62,8 @@ public:
 		cout << name << "\n";
 		//Segunda linea
 		MyReadFile >> vertex_count >> face_count >> edge_count;
-		//getline(MyReadFile, line);
-		//cout << line << "\n";
-		//flotanes = vertex_count;
-		//MyReadFile.get(floats);
-
 		cout << vertex_count << face_count << edge_count << flotanes << "\n";
+
 		//Sin color ni textura
 		if (flotanes == 3)
 			vertices = new float[vertex_count * 3];
@@ -78,8 +74,8 @@ public:
 		if (flotanes == 5)
 			vertices = new float[vertex_count * 5];
 
+		//Tercera linea en adelante
 		faces = new int[face_count * 3];
-
 		for (int i = 0; i < vertex_count; i++)
 		{
 			if (flotanes == 3) {
@@ -224,8 +220,6 @@ public:
 			glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
 			glEnableVertexAttribArray(2);
 		}
-		//glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)(3 * sizeof(float)));
-		//glEnableVertexAttribArray(1);
 
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 		glBindVertexArray(0);
